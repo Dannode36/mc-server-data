@@ -5,35 +5,9 @@ services:
 
     ports:
       - 25565:25565
+      
+    restart: always
 
-####################################################################
-#                   Automatic Server Restart                       #
-#                                                                  #
-# Define a restart policy here.                                    #
-#    - 'no' = Do not restart.                                      #
-#    - 'on-failure' = Restart if container exits because an error. #
-#    - 'always' = Regardless of stop reason.                       #
-#    - 'unless-stopped' = Similar to always except if stopped.     #
-####################################################################
-    restart: unless-stopped
-
-####################################################################
-#                     Volume and Folder Access                     #
-#                                                                  #
-# This section defines what folders and volumes you want to give   #
-# this container access to. It is recommended to leaves these set  #
-# to the default values unless you know what you are doing.        #
-#                                                                  #
-# Place your mod zip file in a folder called 'modpacks' in the     #
-# same directory you place this docker-compose file.               #
-#                                                                  #
-# Specify the data volume name or directory here as well.          #
-# In this example the volume name is 'data'. When docker creates   #
-# the volume it will add what ever name you give it here to the    #
-# end of the container name specified above. In this example it    #
-# would be named 'mc_atm6_data'. If you change this be sure to     #
-# update the volume name at the bottom of this config.             #
-####################################################################
     volumes:
       - ./modpacks:/modpacks:ro
       - ./data:/data
